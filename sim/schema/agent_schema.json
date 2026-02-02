@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Agent Architecture",
+  "description": "AI system architecture specification",
+  "type": "object",
+  "properties": {
+    "framework_type": {
+      "type": "string",
+      "enum": ["shard_system", "mesh_distributed", "governance_layered", "alternative_training", "baseline_monolithic"],
+      "description": "Which architectural framework"
+    },
+    "primitives": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["shards", "evaluator_generator", "interpretability", "containment", "human_feedback", "red_team"]
+      },
+      "description": "Which design primitives are used"
+    },
+    "training_method": {
+      "type": "string",
+      "enum": ["rlhf", "imitation", "reasoning", "frozen", "none"],
+      "description": "Training methodology"
+    },
+    "capability_level": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 10,
+      "description": "General capability level (0-10 scale)"
+    }
+  },
+  "required": ["framework_type", "primitives", "training_method"]
+}

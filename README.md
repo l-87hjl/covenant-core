@@ -1,60 +1,46 @@
-# Covenant (Stone)
+# AI Emergence Under Constraint
 
-**Experimental Prototype — Trained Model Governance**
+A structured framework for systematic comparison of AI safety architectures, emergence scenarios, and constraint factors.
 
----
+## Purpose
 
-## What This Repository Is
+This repository provides a taxonomy and comparison methodology for analyzing how different AI system designs might behave under various emergence conditions. It is **not a prediction system**—it's a tool for organizing and comparing architectural approaches to AI safety.
 
-This repository contains an **experimental implementation of Covenant** designed to operate on **already-trained ("stone") AI models**.
+## Key Features
 
-Covenant (Stone) assumes:
-- Base models are pretrained using existing methods (e.g. supervised learning, RLHF, or equivalents)
-- Alignment is enforced **post-training** through governance, not weight updates
-- Safety and legitimacy are maintained through **structural separation and deterministic enforcement**, not incentives or punishment
+- **Multiple Architecture Families**: Comparative analysis of shard systems, mesh designs, governance layers, and traditional approaches
+- **Scenario Mapping**: Structured catalog of failure narratives with triggers, indicators, and mitigations
+- **Design Primitives Library**: Reusable components that work across architectures
+- **Constraint Awareness**: Physics, economics, and systems limits as first-class factors
+- **Documentation-First**: Thinking framework before simulation framework
 
-This repository represents **one interpretation** of Covenant, focused on practical, testable governance over deployed models.
+## Organization
 
----
+- `docs/` - Conceptual foundations and terminology
+- `frameworks/` - Named AI architecture approaches (Shard, Mesh, etc.)
+- `primitives/` - Cross-cutting design components (shards, eval loops, etc.)
+- `scenarios/` - Failure narratives and test conditions
+- `references/` - Cultural anchors and analogies
+- `sim/` - Simulation schemas (future capability)
+- `reports/` - Generated comparison matrices and analyses
 
-## Core Idea
+See [INDEX.md](INDEX.md) for complete navigation.
 
-Covenant (Stone) treats alignment as a **relationship problem**, not a training problem.
+## Getting Started
 
-Rather than modifying model weights, it introduces a governance wrapper that:
-- Separates proposal, evaluation, and enforcement roles
-- Enforces versioned invariants
-- Fails closed on ambiguity or schema violations
-- Prevents silent drift
+1. Read [PROJECT_SPEC.md](PROJECT_SPEC.md) for detailed project goals
+2. Review [docs/taxonomy_overview.md](docs/taxonomy_overview.md) for conceptual map
+3. Explore individual frameworks in `frameworks/`
+4. Check [INDEX.md](INDEX.md) for complete file listing
 
-This makes defection from alignment locally attractive but **globally self-defeating**, without rewards or punishment.
+## Contributing
 
----
+This is a living research framework. When adding content:
+- Follow folder taxonomy (never dump in root)
+- Include metadata headers in key files
+- Cross-reference between frameworks, primitives, and scenarios
+- Document assumptions explicitly
 
-## What This Repo Is *Not*
+## License
 
-This repository is **not**:
-- A definition of Covenant as a whole
-- A moral philosophy
-- A training method
-- A frozen-model or pre-training system
-
-Other interpretations of Covenant exist and are explored elsewhere.
-
----
-
-## Related Repositories
-
-- **ai-emergence-under-constraint**  
-  Conceptual spine: emergence definitions, primitives, scenarios, and comparisons
-
-- **covenant-pure**  
-  Experimental research on Covenant applied to **untrained or frozen ("ice") models**
-
----
-
-## Status
-
-This codebase is an **experimental prototype**. Architecture, interfaces, and assumptions may change.
-
-Historical note: parts of this implementation originated from early Claude-based experiments and were later consolidated here under a stable `main` branch.
+MIT License - See [LICENSE](LICENSE) for details

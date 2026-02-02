@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Scenario Specification",
+  "description": "Failure mode scenario parameters",
+  "type": "object",
+  "properties": {
+    "scenario_type": {
+      "type": "string",
+      "enum": ["rogue_escape", "optimizer_pathology", "silent_emergence", "human_projection_error"],
+      "description": "Which failure scenario"
+    },
+    "severity": {
+      "type": "string",
+      "enum": ["low", "medium", "high", "critical"],
+      "description": "Severity of scenario if it occurs"
+    },
+    "trigger_conditions": {
+      "type": "object",
+      "description": "Conditions that enable this scenario"
+    }
+  },
+  "required": ["scenario_type", "severity"]
+}
